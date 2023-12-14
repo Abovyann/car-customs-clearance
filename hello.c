@@ -5,20 +5,17 @@
 #define MAX_LINE_LENGTH 1024
 
 
-// Trim leading and trailing whitespaces from a string
 char *trim(const char *str) {
-    // Trim leading whitespaces
+
     while (*str && isspace((unsigned char)*str)) {
         str++;
     }
 
-    // Trim trailing whitespaces
     int len = strlen(str);
     while (len > 0 && isspace((unsigned char)str[len - 1])) {
         len--;
     }
 
-    // Create a new string with the trimmed content
     char *trimmed = malloc(len + 1);
     if (trimmed == NULL) {
         fprintf(stderr, "Memory allocation error.\n");
@@ -103,8 +100,6 @@ int main() {
 
     // Calculate total price
     totalPrice = environmentalTax + singleRate + shipment + auction;
-
-    // Print the result
 
 
     FILE *file;
